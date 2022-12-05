@@ -11,7 +11,10 @@ public class Movie implements Findable, Sortable, Comparable<Movie> {
     private String description;
     private Director director;
     private List<Cast> castList;
-    public Movie(){}
+
+    public Movie(){
+
+    }
 
     public Movie(String name, int year, String description, Director director, List<Cast> castList) {
         this.name = name;
@@ -78,21 +81,11 @@ public class Movie implements Findable, Sortable, Comparable<Movie> {
     @Override
     public void findMovieByName(List<Movie> movies) {
         String name = new Scanner(System.in).next();
-        LinkedList<Movie>movies1 = new LinkedList<>();
+        LinkedList<Movie>movies2 = new LinkedList<>();
         for (Movie movie : movies) {
-            if (movie.name.toUpperCase().contains(name.toUpperCase())){
-                movies1.add(movie);
-            }
+            if (movie.name.toUpperCase().contains(name.toUpperCase())) movies2.add(movie);
         }
-        for (Movie movie : movies1) {
-            System.out.println(
-                    "\nname = " + movie.name +
-                    "\ndirector = " + movie.director +
-                    "\nyear = " + movie.year +
-                    "\ndescription = " + movie.description +
-                    "\ncast = " + movie.getCastList()
-            );
-        }
+        movies2.forEach(System.out::println);
     }
 
     @Override
@@ -106,9 +99,8 @@ public class Movie implements Findable, Sortable, Comparable<Movie> {
                 }
             }
         }
-        for (Movie movie : movies1) {
-            System.out.println(movie);
-        }
+        movies1.forEach(System.out::println);
+
     }
 
     @Override

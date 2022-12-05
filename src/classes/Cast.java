@@ -3,7 +3,10 @@ package classes;
 public class Cast {
     private String actorFullName;
     private String role;
-    public Cast(){}
+
+    public Cast(){
+
+    }
 
     public Cast(String actorFullName, String role) {
         this.actorFullName = actorFullName;

@@ -5,7 +5,9 @@ import java.util.Comparator;
 public class Director{
     private String name;
     private String lastName;
-    public Director(){}
+    public Director(){
+
+    }
 
     public Director(String name, String lastName) {
         this.name = name;
